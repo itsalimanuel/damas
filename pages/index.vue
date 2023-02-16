@@ -75,17 +75,29 @@
 .home
     position: relative
     margin-top: 50px
+    @media (max-width: 480px)
+        margin-top: 20px
     &-about
         width: 65%
         margin-left: var(--auto)
+        @media (max-width: 480px)
+            margin-left: unset
+            width: 100%
         &-title
             max-width: 60%
+            @media (max-width: 480px)
+                max-width: 100%
             p
                 font-size: 38px
+                @media (max-width: 480px)
+                    font-size: 18px
         &-image
             margin-top: calc( var(--space-top) * 2 )
             width: 100%
             height: 600px
+            @media (max-width: 480px)
+                margin-top: var(--space-top)
+                height: 300px
             img
                 width: var(--width)
                 height: var(--height)
@@ -93,10 +105,16 @@
         margin-top: calc( var(--space-top) * 4 )
         width: 65%
         margin-left: var(--auto)
+        @media (max-width: 480px)
+            width: 100%
+            margin-top: calc( var(--space-top) * 2 )
         &-title
             h3
                 font-size: 38px
                 font-weight: 400
+                @media (max-width: 480px)
+                    font-size: 22px
+                    font-weight: bold
         &-list
             margin-top: calc( var(--space-top) * 2 )
             display: block
@@ -108,21 +126,35 @@
                 display: grid
                 grid-template-columns: 1fr 3fr
                 border-top: 5px solid var(--main-color)
+                @media (max-width: 480px)
+                    grid-template-columns: 1fr
+                    padding: 20px 0 20px
                 &-data
                     span
                         font-size: 14px
+                        @media (max-width: 480px)
+                            font-size: 18px
                 &-title
                     h3
                         font-size: 28px
                         font-weight: 300
+                        @media (max-width: 480px)
+                            font-size: 18px
     &-works
         margin-top: calc( var(--space-top) * 4 )
         width: 65%
         margin-left: var(--auto)
+        @media (max-width: 480px)
+            width: 100%
+            margin-top: calc( var(--space-top) * 2 )
+
         &-title
             h3
                 font-size: 38px
                 font-weight: 400
+                @media (max-width: 480px)
+                    font-size: 22px
+                    font-weight: bold
         &-list
             margin-top: calc( var(--space-top) * 2 )
             display: block
@@ -134,12 +166,24 @@
                 display: grid
                 grid-template-columns: 1fr 3fr
                 border-top: 5px solid var(--main-color)
+                @media (max-width: 480px)
+                    grid-template-columns: unset
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    padding: 20px 0 20px
                 &-data
                     span
                         font-size: 14px
+                        @media (max-width: 480px)
+                            font-size: 18px
                 &-title
                     text-align: right
+                    @media (max-width: 480px)
+                        text-align: left
                     h3
                         font-size: 28px
                         font-weight: 300
+                        @media (max-width: 480px)
+                            font-size: 18px
 </style>

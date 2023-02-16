@@ -27,11 +27,16 @@
     align-items: center
     justify-content: space-between
     padding: 40px 50px
+    @media (max-width: 480px)
+        padding: 10px 20px
     &-list
         display: flex
         justify-content: space-between
         max-width: 400px
         width: 100%
+        @media (max-width: 480px)
+            display: none
+            max-width: 100%
     &-links
         display: block
         a
@@ -86,5 +91,7 @@
         h2
             font-size: 72px
             color: var(--main-color)
+            @media (max-width: 480px)
+                font-size: 22px
                 
 </style>

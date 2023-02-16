@@ -16,5 +16,9 @@ const layout = 'default'
 .main{
   padding: 0 50px;
   padding-top: var(--pageTop);
+  @media (max-width: 480px) {
+    padding: 0 20px;
+    padding-top: 40px;
+  }
 }
 </style>

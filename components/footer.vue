@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import {ref , onMounted} from '#imports'
+
+const data = ref<Number>()
+
+const getYear = () => {
+    data.value = new Date().getFullYear()
+}
+
+onMounted(() => {
+    getYear()
+})
+
+</script>
+
 <template>
     <footer class="footer">
         <div class="footer-social">
@@ -14,20 +29,30 @@
             <a href="">hi@email.com</a>
         </div>
     </footer>
+    <div class="copyright">
+        Made with love using <a href="">Nuxt</a> - {{ data }}
+    </div>
 </template>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .footer
     position: relative
     padding: 50px
     width: var(--width)
     display: grid
     grid-template-columns: 2fr 5fr
+    @media (max-width: 480px)
+        grid-template-columns: unset
+        display: flex
+        flex-direction: column
+        padding: 20px
     &-social
         &-title
             padding-bottom: var(--space-top)
             h3
                 font-size: 20px
+                @media (max-width: 480px)
+                    font-size: 22px
         &-links
             display: block
             a
@@ -38,13 +63,33 @@
                 margin-top: var(--space-top)
     &-contact
         padding-bottom: calc( var(--space-top) * 12 )
+        @media (min-width: 480px)
+            padding-bottom: var(--space-top)
         p
             padding-bottom: calc( var(--space-top) * 4 )
             font-size: 36px
+            @media (max-width: 480px)
+                padding-bottom: calc( var(--space-top) * 4 )
+                padding-top: var(--space-top)
+                font-size: 18px
         a
             padding: var(--space-top) calc( var(--space-top) * 4 )
             background: var(--main-color)
             color: var(--backgroundColor)
             text-decoration: none
             border-radius: calc( var(--space-top) * 3  )
+            @media (max-width: 480px)
+                width: var(--width)
+                display: block
+                font-weight: bold
+                text-align: center
+.copyright
+    padding: 0 50px
+    text-align: center
+    @media (max-width: 480px)
+        padding-bottom: 20px
+    a
+        color: var(--main-color)
+        text-decoration: none
+        font-weight: bold
 </style>
