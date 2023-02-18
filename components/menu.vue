@@ -1,3 +1,4 @@
+<script></script>
 <template>
   <svg
     class="hb"
