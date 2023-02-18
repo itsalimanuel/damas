@@ -1,20 +1,7 @@
 <script setup>
 import { ref } from "#imports";
-import gsap from "gsap";
-
 const refItem = ref(null);
 
-const mouseEnter = () => {
-  let mouse = gsap.timeline();
-  let targets = gsap.utils.toArray(refItem.value);
-  targets.forEach((item) => {
-    console.log(item);
-    mouse.to(item, {
-      color: "red",
-      ease: "none",
-    });
-  });
-};
 </script>
 
 <template>
@@ -42,7 +29,6 @@ const mouseEnter = () => {
           v-for="(index, i) in 3"
           :key="i"
           ref="refItem"
-          @mouseenter="mouseEnter(i)"
           class="--item"
         >
           <div class="--item-data">
