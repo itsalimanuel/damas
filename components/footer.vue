@@ -41,7 +41,7 @@ onMounted(() => {
     width: var(--width)
     display: grid
     grid-template-columns: 2fr 5fr
-    @media (max-width: 480px)
+    @media (max-width: 820px)
         grid-template-columns: unset
         display: flex
         flex-direction: column
@@ -51,7 +51,7 @@ onMounted(() => {
             padding-bottom: var(--space-top)
             h3
                 font-size: 20px
-                @media (max-width: 480px)
+                @media (max-width: 820px)
                     font-size: 22px
         &-links
             display: block
@@ -63,12 +63,12 @@ onMounted(() => {
                 margin-top: var(--space-top)
     &-contact
         padding-bottom: calc( var(--space-top) * 12 )
-        @media (min-width: 480px)
+        @media (min-width: 820px)
             padding-bottom: var(--space-top)
         p
             padding-bottom: calc( var(--space-top) * 4 )
             font-size: 36px
-            @media (max-width: 480px)
+            @media (max-width: 820px)
                 padding-bottom: calc( var(--space-top) * 4 )
                 padding-top: var(--space-top)
                 font-size: 18px
@@ -78,7 +78,7 @@ onMounted(() => {
             color: var(--backgroundColor)
             text-decoration: none
             border-radius: calc( var(--space-top) * 3  )
-            @media (max-width: 480px)
+            @media (max-width: 820px)
                 width: var(--width)
                 display: block
                 font-weight: bold
@@ -86,7 +86,7 @@ onMounted(() => {
 .copyright
     padding: 0 50px
     text-align: center
-    @media (max-width: 480px)
+    @media (max-width: 820px)
         padding-bottom: 20px
     a
         color: var(--main-color)
