@@ -48,8 +48,18 @@ const toggleMneu = () => {
         padding: 10px 20px
         #burger
             display: block
+            z-index: 5
     .active
-        display: block
+        display: flex
+        flex-direction: column
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100vh
+        justify-content: space-evenly
+        align-items: center
+        background-color: var(--backgroundColor)
     &-list
         display: flex
         justify-content: space-between
@@ -69,8 +79,7 @@ const toggleMneu = () => {
             &:hover
                 color: var(--color-white)
     &-contact
-        @media (max-width: 820px)
-            display: none
+        
         a
             position: relative
             width: 200px
