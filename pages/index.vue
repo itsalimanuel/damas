@@ -1,74 +1,79 @@
+<script setup>
+import { ref } from "#imports";
+import gsap from "gsap";
+
+const refItem = ref(null);
+
+const mouseEnter = () => {
+  let mouse = gsap.timeline();
+  let targets = gsap.utils.toArray(refItem.value);
+  targets.forEach((item) => {
+    console.log(item);
+    mouse.to(item, {
+      color: "red",
+      ease: "none",
+    });
+  });
+};
+</script>
+
 <template>
-    <div class="home">
-        <div class="home-about">
-            <div class="home-about-title">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, asperiores?
-                </p>
-            </div>
-            <div class="home-about-image">
-                <img src="https://images.pexels.com/photos/90333/pexels-photo-90333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt="">
-            </div>
-        </div>
-        <div class="home-service">
-            <div class="home-service-title">
-                <h3>Services:</h3>
-            </div>
-            <div class="home-service-list">
-                <div class="--item">
-                    <div class="--item-data">
-                        <span>19 April 2022</span>
-                    </div>
-                    <div class="--item-title">
-                        <h3>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nobis commodi tenetur
-                            dolores sapiente eum, iure rerum ut nesciunt ducimus.
-                        </h3>
-                    </div>
-                </div>
-                <div class="--item">
-                    <div class="--item-data">
-                        <span>19 April 2022</span>
-                    </div>
-                    <div class="--item-title">
-                        <h3>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nobis commodi tenetur
-                            dolores sapiente eum, iure rerum ut nesciunt ducimus.
-                        </h3>
-                    </div>
-                </div>
-                <div class="--item">
-                    <div class="--item-data">
-                        <span>19 April 2022</span>
-                    </div>
-                    <div class="--item-title">
-                        <h3>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nobis commodi tenetur
-                            dolores sapiente eum, iure rerum ut nesciunt ducimus.
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="home-works">
-            <div class="home-works-title">
-                <h3>Works:</h3>
-            </div>
-            <div class="home-works-list">
-                <div class="--item" v-for="i in 10">
-                    <div class="--item-data">
-                        <span>19 April 2022</span>
-                    </div>
-                    <div class="--item-title">
-                        <h3>
-                            name
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="home">
+    <div class="home-about">
+      <div class="home-about-title">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
+          asperiores?
+        </p>
+      </div>
+      <div class="home-about-image">
+        <img
+          src="https://images.pexels.com/photos/90333/pexels-photo-90333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+      </div>
     </div>
+    <div class="home-service">
+      <div class="home-service-title">
+        <h3>Services:</h3>
+      </div>
+      <div class="home-service-list">
+        <div
+          v-for="(index, i) in 3"
+          :key="i"
+          ref="refItem"
+          @mouseenter="mouseEnter(i)"
+          class="--item"
+        >
+          <div class="--item-data">
+            <span>19 April 2022 {{ index }}</span>
+          </div>
+          <div class="--item-title">
+            <h3>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus nobis commodi tenetur dolores sapiente eum, iure rerum
+              ut nesciunt ducimus.
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home-works">
+      <div class="home-works-title">
+        <h3>Works:</h3>
+      </div>
+      <div class="home-works-list">
+        <div class="--item" v-for="i in 10">
+          <div class="--item-data">
+            <span>19 April 2022</span>
+          </div>
+          <div class="--item-title">
+            <h3>name</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="sass">
