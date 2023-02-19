@@ -1,4 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Damas - Portfolio nuxt template
+
+![01_intro](https://user-images.githubusercontent.com/44509661/219940218-319a774e-2f80-4e53-9a72-a6344655e452.jpg)
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
